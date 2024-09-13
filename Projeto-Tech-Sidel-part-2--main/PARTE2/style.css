@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@500&display=swap");
+
+:root {
+    --cor-primaria: #223344; /* Azul Escuro */
+    --cor-secundaria: #006644; /* Verde Escuro */
+    --cor-destaque: #ffaa44; /* Laranja */
+    --cor-texto: #ffffff; /* Branco */
+    --cor-subtitulo: #cccccc; /* Cinza Claro */
+    --cor-fundo: #223344; /* Azul Escuro (Fundo padrão) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--cor-subtitulo);
+    display: flex;
+    flex-direction: column;
+    color: var(--cor-texto);
+}
+
+main {
+    flex: 1;
+}
+
+/* _________________HEADER___________________________________________________________________ */
+
+.navbar-custom {
+    background: var(--cor-primaria);
+    padding: 35px 8.5%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 100px;
+   
+}
+
+.navbar-toggler.custom-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-item {
+    position: relative;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--cor-secundaria);
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    padding-bottom: 3.3px;
+    bottom: -6px;
+    width: 85%;
+    height: 2px;
+    background: var(--cor-texto);
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.nav-item.active .nav-link {
+    font-weight: bold;
+}
+
+/* _____________BODY_________________________________________________________________________ */
+
+/*___________________________________________________ CARROSSEL____________________________________________________ */
+
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  width: 100%;
+}
+
+.carousel {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.carousel-slides {
+  display: flex;
+  position: relative;
+  width: 400%;
+}
+
+.carousel-slides input[type="radio"] {
+  display: none;
+}
+
+.slide-imgs {
+  transition: 2s;
+  width: 25%;
+}
+
+.slide-imgs img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-navigation {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 7%;
+  left: 6.25%;
+  width: 12.5%;
+}
+
+.carousel-btn {
+  background-color: transparent;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 500ms;
+}
+
+.carousel-btn:not(:last-child) {
+  margin-right: 10%;
+}
+
+.carousel-btn:hover {
+  background-color: white;
+}
+
+#radio1:checked ~ .first-img {
+  margin-left: 0;
+}
+#radio2:checked ~ .first-img {
+  margin-left: -25%;
+}
+#radio3:checked ~ .first-img {
+  margin-left: -50%;
+}
+#radio4:checked ~ .first-img {
+  margin-left: -75%;
+}
+
+#radio1:checked ~ .carousel-navigation > .btn1 {
+  background-color: white;
+}
+#radio2:checked ~ .carousel-navigation > .btn2 {
+  background-color: white;
+}
+#radio3:checked ~ .carousel-navigation > .btn3 {
+  background-color: white;
+}
+#radio4:checked ~ .carousel-navigation > .btn4 {
+  background-color: white;
+}
+
+  
+/* ______________________________________________________________________________________ */
+
+
+
+.service-box {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.service-box i, .service-box h3 {
+  transition: .5s;
+}
+
+.service-box i {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.service-box h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.service-box:hover > i, .service-box:hover > h3 {
+  color: aqua;
+}
+
+/* ______________________________________________________________________________________ */
+
+/* Estilos para o rodapé */
+footer {
+    background: var(--cor-primaria);
+    color: var(--cor-texto);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: var(--cor-subtitulo);
+    text-decoration: none;
+}
+
+footer .container {
+    max-width: 1200px;
+}
+
+footer .row div {
+    margin-bottom: 15px;
+}
+
+footer .text-center {
+    border-top: 1px solid var(--cor-subtitulo);
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+footer .text-center p {
+    margin-bottom: 0;
+}
+
+/* __________MEDIA QUERY____________________________________________________________________________ */
+
+
+
+/* Estilos específicos para telas pequenas (celulares) */
+@media (max-width: 575.98px) {
+    #logo {
+        width: 80px;
+        position: relative;
+        top: -10px;
+        right: 1000px;
+       
+    }
+.col-md-6 img{
+  display: block;
+}
+    main{
+      height: 500px;
+    }
+}
+
+/* Estilos específicos para dispositivos médios (tablets em modo paisagem) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #logo {
+        width: 80px;
+        position: relative;
+        top: -10px;
+        right: 1000px;
+       
+    }
+    main{
+      height: 500px;
+    }
+}
+
+/* Estilos específicos para dispositivos médios-grandes (tablets e pequenos desktops) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #logo {
+        width: 80px;
+        position: relative;
+        top: -10px;
+        right: 1000px;
+        
+    }
+ .row-f{
+      
+        margin-left: 150px;
+    }
+    main{
+      height: 500px;
+    }
+}
+
+/* Estilos específicos para dispositivos grandes (desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #logo {
+        width: 80px;
+        margin-left: 0px;
+        margin-top: -10px;
+    }
+    main{
+      height: 500px;
+    }
+}
+
+/* Estilos específicos para dispositivos extra grandes (desktops grandes) */
+@media (min-width: 1200px) {
+    #logo {
+        width: 120px;
+        margin-left: 30px;
+        margin-top: -25px;
+       
+    }
+    main{
+      height: 500px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar .navbar-expand-lg .navbar-light .navbar-custom #logo {
+        margin-left: 100px;
+    }
+    main{
+      height: 500px;
+    }
+
+    .side-image {
+        border-radius: 10px 10px 0 0;
+    }
+
+    img {
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 47%;
+    }
+
+    .text {
+        position: absolute;
+        top: 70%;
+        text-align: center;
+    }
+
+    .text p,
+    i {
+        font-size: 17px;
+    }
+
+    .row {
+        max-width: 420px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-nav .nav-link::after {
+        bottom: 0;
+        height: 1px;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
